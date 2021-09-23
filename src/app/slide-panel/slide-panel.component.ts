@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
+// type PaneType = 'left' | 'right' | 'middle';
 type PaneType = 'left' | 'right';
 
 @Component({
@@ -10,8 +11,8 @@ type PaneType = 'left' | 'right';
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('slide', [
-      state('left', style({ transform: 'translateX(0)' })),
-      state('right', style({ transform: 'translateX(-50%)' })),
+      state('left', style({ transform: 'translateX(10%)' })),
+      state('right', style({ transform: 'translateX(-60%)' })),
       transition('* => *', animate(300))
     ])
   ]

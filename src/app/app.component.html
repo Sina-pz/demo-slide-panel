@@ -1,6 +1,24 @@
-<my-slide-panel [activePane]="isLeftVisible ? 'left' : 'right'">
+<!-- <my-slide-panel [activePane]="isLeftVisible ? 'left' : 'right'">
   <div leftPane>LEFT</div>
   <div rightPane>RIGHT</div>
+
 </my-slide-panel>
 
-<button (click)="isLeftVisible = !isLeftVisible">Toggle panes</button>
+<button (click)="isLeftVisible = !isLeftVisible">Toggle panes</button> -->
+<!-- <button (click)="onClick()"> click</button> -->
+<div class="panels-container">  
+  
+<div class="panel-left" (click)="onLeftClick()" 
+[ngClass]="{'right-to-left-to-small-anim' : isLeftPanelToSmallToLeft,
+'right-to-left-anim' : isLeftPanelToLeft}">
+  <button ></button>
+</div>
+<div *ngIf="isSecond" class="panel-middle">
+ <button (click)="onMiddleClick()" ></button>
+</div>
+<div *ngIf="isCssAnimVisible" class="panel-right">
+  <button (click)="onRightClick()" ></button>
+</div>
+
+
+</div>

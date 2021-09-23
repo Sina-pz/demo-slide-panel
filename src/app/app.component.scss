@@ -29,3 +29,121 @@ my-slide-panel {
 
 [leftPane]  { background-color: #FFF897; }
 [rightPane] { background-color: #6CE6CB; }
+
+
+.panels-container {
+  width: 900px;
+  display: flex;
+  flex-direction: row;
+
+
+.panel-left {
+  width:600px;
+  margin-left: 10px;
+  height: 80px;
+  background: rgb(101, 101, 248);
+  position: relative;
+  // left: 500px;
+  // -webkit-animation: slideIn 2s forwards;
+  // -moz-animation: slideIn 2s forwards;
+  // animation: slideIn 2s forwards;
+  
+  &.left-to-right-anim {
+    left: 500px;
+    -webkit-animation: slideIn 2s forwards;
+    -moz-animation: slideIn 2s forwards;
+    animation: slideIn 2s forwards;
+  }
+  &.right-to-left-anim {
+    left: 600px;
+    -webkit-animation: slideOut 2s forwards;
+    -moz-animation: slideOut 2s forwards;
+    animation: slideOut 2s forwards;
+  }
+  &.right-to-left-to-small-anim {
+    width:500px;
+    // transform: translateX(-10px);
+    transition: width 1s;
+  }
+
+
+  button {
+    width: 40px;
+    height:20px;
+    margin-left: 10px;
+  }
+}
+
+.panel-middle {
+  width: 200px;
+  height: 80px;
+  background: rgb(215, 127, 255);
+  position: relative;
+  //left: 710px;
+  -webkit-animation: slideInFromRight 2s forwards;
+  -moz-animation: slideInFromRight 2s forwards;
+  animation: slideInFromRight 2s forwards;
+  button {
+    width: 40px;
+    height:20px;
+    margin-left: 10px;
+  }
+}
+.panel-right {
+  width: 200px;
+  height: 80px;
+  background: rgb(248, 220, 128);
+  position: relative;
+  left: 200px;
+  -webkit-animation: slideIn 2s forwards;
+  -moz-animation: slideIn 2s forwards;
+  animation: slideIn 2s forwards;
+  button {
+    width: 40px;
+    height:20px;
+    margin-left: 10px;
+  }
+}
+}
+@keyframes slideOut {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(-600px);
+  }
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(-900px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(4000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+// @-webkit-keyframes slideIn {
+//   0% {
+//     transform: translateX(-900px);
+//   }
+//   100% {
+//     transform: translateX(0);
+//   }
+// }
+// @-moz-keyframes slideIn {
+//   0% {
+//     transform: translateX(-900px);
+//   }
+//   100% {
+//     transform: translateX(0);
+//   }
+// }
+
+
